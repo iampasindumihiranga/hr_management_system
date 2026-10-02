@@ -1,1 +1,5 @@
+com\hrmanagement\employee\controller\EmployeeController.class
+com\hrmanagement\employee\repository\EmployeeRepository.class
+com\hrmanagement\employee\entity\Employee.class
+com\hrmanagement\employee\service\EmployeeService.class
 com\hrmanagement\HrManagementBackendApplication.class
