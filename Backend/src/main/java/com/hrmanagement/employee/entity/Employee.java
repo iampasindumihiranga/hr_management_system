@@ -6,6 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDate;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import com.hrmanagement.department.entity.Department;
+
 
 @Entity
 @Table(name = "employees")
@@ -30,7 +34,9 @@ public class Employee {
 
     private String phone;
 
-    private String department;
+    @ManyToOne
+@JoinColumn(name = "department_id")
+private Department department;
 
     private String designation;
 

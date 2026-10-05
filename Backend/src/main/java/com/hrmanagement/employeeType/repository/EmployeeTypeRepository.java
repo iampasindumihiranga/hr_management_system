@@ -1,11 +1,9 @@
-package com.hrmanagement.employeetype.repository;
+package com.hrmanagement.employeeType.repository;
 
-import com.hrmanagement.employeetype.entity.EmployeeType;
+import com.hrmanagement.employeeType.entity.EmployeeType;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface EmployeeTypeRepository
-        extends JpaRepository<EmployeeType, Long> {
+extends JpaRepository<EmployeeType, Long> {
 
 }

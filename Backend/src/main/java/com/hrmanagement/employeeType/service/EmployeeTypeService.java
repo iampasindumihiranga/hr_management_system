@@ -1,7 +1,6 @@
-package com.hrmanagement.employeetype.service;
+package com.hrmanagement.employeeType.service;
 
-import com.hrmanagement.employeetype.entity.EmployeeType;
-import com.hrmanagement.employeetype.repository.EmployeeTypeRepository;
+import com.hrmanagement.employeeType.repository.EmployeeTypeRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -14,11 +13,11 @@ public class EmployeeTypeService {
         this.employeeTypeRepository = employeeTypeRepository;
     }
 
-    public List<EmployeeType> getAllEmployeeTypes() {
+    public List<com.hrmanagement.employeeType.entity.EmployeeType> getAllEmployeeTypes() {
         return employeeTypeRepository.findAll();
     }
 
-    public EmployeeType getEmployeeTypeById(Long id) {
+    public com.hrmanagement.employeeType.entity.EmployeeType getEmployeeTypeById(Long id) {
         return employeeTypeRepository.findById(id)
                 .orElseThrow(() ->
                         new RuntimeException(
@@ -27,15 +26,16 @@ public class EmployeeTypeService {
                 );
     }
 
-    public EmployeeType createEmployeeType(EmployeeType employeeType) {
+    public com.hrmanagement.employeeType.entity.EmployeeType createEmployeeType(
+            com.hrmanagement.employeeType.entity.EmployeeType employeeType) {
         return employeeTypeRepository.save(employeeType);
     }
 
-    public EmployeeType updateEmployeeType(
+    public com.hrmanagement.employeeType.entity.EmployeeType updateEmployeeType(
             Long id,
-            EmployeeType employeeTypeDetails) {
+            com.hrmanagement.employeeType.entity.EmployeeType employeeTypeDetails) {
 
-        EmployeeType employeeType = getEmployeeTypeById(id);
+        com.hrmanagement.employeeType.entity.EmployeeType employeeType = getEmployeeTypeById(id);
 
         employeeType.setTypeName(employeeTypeDetails.getTypeName());
         employeeType.setDescription(employeeTypeDetails.getDescription());
@@ -45,7 +45,7 @@ public class EmployeeTypeService {
     }
 
     public void deleteEmployeeType(Long id) {
-        EmployeeType employeeType = getEmployeeTypeById(id);
+        com.hrmanagement.employeeType.entity.EmployeeType employeeType = getEmployeeTypeById(id);
 
         employeeTypeRepository.delete(employeeType);
     }

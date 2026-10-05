@@ -1,5 +1,4 @@
-package com.hrmanagement.employeeType.entity;
-
+package com.hrmanagement.department.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,23 +7,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "employee_types")
+@Table(name = "departments")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeType {
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long employeeTypeId;
+    private Long departmentId;
 
-    @Column(nullable = false, unique = true, length = 100)
-    private String typeName;
+    @Column(nullable = false, unique = true)
+    private String departmentName;
 
-    @Column(length = 255)
     private String description;
 
-    @Column(nullable = false, length = 20)
     private String status;
 }

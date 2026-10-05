@@ -1,5 +1,17 @@
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\department\controller\DepartmentController.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\department\entity\Department.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\department\repository\DepartmentRepository.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\department\service\DepartmentService.java
 C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employee\controller\EmployeeController.java
 C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employee\entity\Employee.java
 C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employee\repository\EmployeeRepository.java
 C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employee\service\EmployeeService.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employeeType\controller\EmployeeTypeController.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employeeType\entity\EmployeeType.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employeeType\repository\EmployeeTypeRepository.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\employeeType\service\EmployeeTypeService.java
 C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\HrManagementBackendApplication.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\leavetype\controller\LeaveTypeController.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\leavetype\entity\LeaveType.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\leavetype\Repository\LeaveTypeRepository.java
+C:\Users\iampa\Desktop\HRMS\Backend\src\main\java\com\hrmanagement\leavetype\service\LeaveTypeService.java

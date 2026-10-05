@@ -1,7 +1,7 @@
-package com.hrmanagement.employeetype.controller;
+package com.hrmanagement.employeeType.controller;
 
-import com.hrmanagement.employeetype.entity.EmployeeType;
-import com.hrmanagement.employeetype.service.EmployeeTypeService;
+import com.hrmanagement.employeeType.entity.EmployeeType;
+import com.hrmanagement.employeeType.service.EmployeeTypeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,6 @@ public class EmployeeTypeController {
 
     @GetMapping
     public ResponseEntity<List<EmployeeType>> getAllEmployeeTypes() {
-
         return ResponseEntity.ok(
                 employeeTypeService.getAllEmployeeTypes()
         );
