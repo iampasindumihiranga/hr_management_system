@@ -1,6 +1,6 @@
-package com.hrmanagement.workschedule.repository;
+package com.hrmanagement.workSchedule.repository;
 
-import com.hrmanagement.workschedule.entity.WorkSchedule;
+import com.hrmanagement.workSchedule.entity.WorkSchedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.hrmanagement.workschedule.entity;
+package com.hrmanagement.workSchedule.entity;
 
 import com.hrmanagement.employee.entity.Employee;
 import jakarta.persistence.*;

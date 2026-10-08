@@ -1,4 +1,4 @@
-package com.hrmanagement.leavetype.repository;
+package com.hrmanagement.leavetype.Repository;
 
 import com.hrmanagement.leavetype.entity.LeaveType;
 import org.springframework.data.jpa.repository.JpaRepository;

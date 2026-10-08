@@ -1,7 +1,7 @@
 package com.hrmanagement.leavetype.service;
 
 import com.hrmanagement.leavetype.entity.LeaveType;
-import com.hrmanagement.leavetype.repository.LeaveTypeRepository;
+import com.hrmanagement.leavetype.Repository.LeaveTypeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.hrmanagement.workschedule.service;
+package com.hrmanagement.workSchedule.service;
 
-import com.hrmanagement.workschedule.entity.WorkSchedule;
-import com.hrmanagement.workschedule.repository.WorkScheduleRepository;
+import com.hrmanagement.workSchedule.entity.WorkSchedule;
+import com.hrmanagement.workSchedule.repository.WorkScheduleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

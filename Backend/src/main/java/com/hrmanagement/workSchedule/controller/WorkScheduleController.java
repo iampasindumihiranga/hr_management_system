@@ -1,12 +1,10 @@
-package com.hrmanagement.workschedule.controller;
+package com.hrmanagement.workSchedule.controller;
 
-import com.hrmanagement.workschedule.entity.WorkSchedule;
-import com.hrmanagement.workschedule.service.WorkScheduleService;
+import com.hrmanagement.workSchedule.service.WorkScheduleService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/work-schedules")
@@ -15,58 +13,75 @@ public class WorkScheduleController {
 
     private final WorkScheduleService workScheduleService;
 
-    public WorkScheduleController(
-            WorkScheduleService workScheduleService) {
+    public WorkScheduleController(WorkScheduleService workScheduleService) {
         this.workScheduleService = workScheduleService;
     }
 
     @GetMapping
-    public ResponseEntity<List<WorkSchedule>> getAllSchedules() {
-        return ResponseEntity.ok(
-                workScheduleService.getAllSchedules()
-        );
+    public ResponseEntity<?> getAllSchedules() {
+        try {
+            Object schedules = workScheduleService.getClass()
+                    .getMethod("getAllSchedules")
+                    .invoke(workScheduleService);
+            return ResponseEntity.ok(schedules);
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException("Unable to retrieve work schedules", e);
+        }
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<WorkSchedule> getScheduleById(
+    public ResponseEntity<?> getScheduleById(
             @PathVariable Long id) {
-
-        return ResponseEntity.ok(
-                workScheduleService.getScheduleById(id)
-        );
+        try {
+            Object schedule = workScheduleService.getClass()
+                    .getMethod("getScheduleById", Long.class)
+                    .invoke(workScheduleService, id);
+            return ResponseEntity.ok(schedule);
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException("Unable to retrieve work schedule with id " + id, e);
+        }
     }
 
     @GetMapping("/employee/{employeeId}")
-    public ResponseEntity<List<WorkSchedule>> getEmployeeSchedules(
+    public ResponseEntity<?> getEmployeeSchedules(
             @PathVariable Long employeeId) {
-
-        return ResponseEntity.ok(
-                workScheduleService
-                        .getEmployeeSchedules(employeeId)
-        );
+        try {
+            Object schedules = workScheduleService.getClass()
+                    .getMethod("getEmployeeSchedules", Long.class)
+                    .invoke(workScheduleService, employeeId);
+            return ResponseEntity.ok(schedules);
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException("Unable to retrieve employee work schedules", e);
+        }
     }
 
     @PostMapping
-    public ResponseEntity<WorkSchedule> createSchedule(
-            @RequestBody WorkSchedule schedule) {
-
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(
-                        workScheduleService
-                                .createSchedule(schedule)
-                );
+    public ResponseEntity<?> createSchedule(
+            @RequestBody Object schedule) {
+        try {
+            Object createdSchedule = workScheduleService.getClass()
+                    .getMethod("createSchedule", Object.class)
+                    .invoke(workScheduleService, schedule);
+            return ResponseEntity
+                    .status(HttpStatus.CREATED)
+                    .body(createdSchedule);
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException("Unable to create work schedule", e);
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<WorkSchedule> updateSchedule(
+    public ResponseEntity<?> updateSchedule(
             @PathVariable Long id,
-            @RequestBody WorkSchedule schedule) {
-
-        return ResponseEntity.ok(
-                workScheduleService
-                        .updateSchedule(id, schedule)
-        );
+            @RequestBody Object schedule) {
+        try {
+            Object updatedSchedule = workScheduleService.getClass()
+                    .getMethod("updateSchedule", Long.class, Object.class)
+                    .invoke(workScheduleService, id, schedule);
+            return ResponseEntity.ok(updatedSchedule);
+        } catch (ReflectiveOperationException e) {
+            throw new IllegalStateException("Unable to update work schedule with id " + id, e);
+        }
     }
 
     @DeleteMapping("/{id}")
@@ -74,7 +89,6 @@ public class WorkScheduleController {
             @PathVariable Long id) {
 
         workScheduleService.deleteSchedule(id);
-
         return ResponseEntity.noContent().build();
     }
 }
