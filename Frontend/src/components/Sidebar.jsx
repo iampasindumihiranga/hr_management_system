@@ -18,7 +18,40 @@ function Sidebar() {
         {
             name: "Employee Types",
             path: "/employee-types"
-        }
+            
+        },
+        {   name: "Leave Types", 
+            path: "/leave-types" 
+
+        },
+        {  
+            name: "Leave Policies", 
+            path: "/leave-policies" 
+
+        },
+        {   name: "Leave Requests", 
+            path: "/leave-requests" 
+
+        },
+        {   name: "Attendance",
+            path: "/attendance" 
+
+        },
+        {   name: "Work Schedules", 
+            path: "/work-schedules" 
+
+        },
+        {   name: "Holidays",
+            path: "/holidays" 
+        },
+        {   name: "Overtime", 
+            path: "/overtime" 
+
+        },
+        {   name: "Attendance Corrections", 
+            path: "/attendance-corrections" 
+
+        },
     ];
 
     return (
